@@ -53,7 +53,7 @@ knitr::include_graphics('https://media.giphy.com/media/6R2mLi910HL4VXFwOG/giphy.
 ---
 ## APRESENTAÇÃO
 
-- [**Qual o Objetivo da Aula?**](#objetivo_aula)
+- [**Qual o objetivo da aula?**](#objetivo_aula)
 
 --
 
@@ -61,15 +61,19 @@ knitr::include_graphics('https://media.giphy.com/media/6R2mLi910HL4VXFwOG/giphy.
 
 --
 
-- [**O Que é Probabilidade?**](#)
+- [**Tudo sempre depende?**](#dependencia)
 
 --
 
-- [**Sua Hipótese é Verdadeira?**](#)
+- [**O que é probabilidade?**](#)
 
 --
 
-- [**Todo Erro é Igual?**](#)
+- [**Sua hipótese é verdadeira?**](#)
+
+--
+
+- [**Todo erro é igual?**](#)
 
 
 ---
@@ -99,7 +103,10 @@ O principal da aula é finalmente compreender que **estatística não "é conta"
 muito mais que isso, **é uma forma de enxergar o mundo**. A estatística é uma 
 forma de tomar decisões consistentes, por sua vez, apoiadas em dados. Para tanto, 
 foram desenvolvidas uma série de **"ferramentas matemáticas"** para analisar os 
-dados.
+dados. Aproveite este momento para refletir quantas vezes as suas decisões foram (ou 
+ainda são) pautadas em expressões/raciocínios como "eu acho que...". Este é um 
+percurso muito perigoso pois em grande parte das vezes nossa intuição pode nos 
+levar ao erro!
 
 <br/>
 
@@ -146,20 +153,108 @@ name: amostra_populacao
 knitr::include_graphics('https://media.giphy.com/media/cAxOGVNVPEkjDcpVQk/giphy.gif')
 ```
 
+---
+<div style="text-align: justify">
+
+## AMOSTRA E POPULAÇÃO
+
+Sempre que vamos explicar os conceitos de amostra e população partimos de um 
+um exemplo útil: **Pesquisas de intenção de votos**, vamos a ele. Imagine que 
+você faz parte da equipe de uma empresa de pesquisa de opinião pública que foi 
+contratada para realizar uma previsão do resultado de uma eleição, como proceder?
+
+<br/>
+
+A única maneira de saber exatamente o resultado da eleição consiste em consultar
+todos os eleitores e, ainda mais, obrigá-los a falar a real intenção de cada um. 
+Não é necessário muito esforço para compreender que este procedimento é impossível:
+ - Não há como consultar todos os eleitores;
+ - Não há como obrigar ninguém a responder a real intenção de votos. 
+
+<br/>
+
+De todo modo, é possível contornar o primeiro problema, isto é, não é preciso 
+consultar todos os eleitores. Pode-se, alternativamente, selecionar um conjunto 
+de eleitores a serem consultados e, desde que este conjunto de eleitores seja 
+representativo do todo, concluir que o resultado a pesquisa com o conjunto 
+"é igual" ao resultado do todo.
+
+---
+<div style="text-align: justify">
+
+## AMOSTRA E POPULAÇÃO
+
+Na estatística nos referimos ao total de eleitores como **população** e ao 
+conjunto de eleitores selecionados para pesquisa como **amostra**. De fato, a 
+partir deste exemplo ilustrativo pode-se realizar uma definição mais geral sobre 
+esses conceitos, assim como segue:
+
+- **População:**  Total de elementos (ou eventos) semelhantes e que interessa para
+alguma questão ou experimento;
+
+- **Amostra:** Subconjunto de elementos (ou eventos) formados a partir da 
+população, ou seja, subconjunto do total de elementos (ou eventos).
+
+<br/>
+
+É possível realizar mais uma definição a partir do exemplo da pesquisa de 
+intenção de votos. Se você for um pouco mais observador poderá perceber que 
+utilizamos uma amostra para "obter" uma conclusão acerca da população. Aqui, vamos 
+chamar esta "conclusão sobre algum aspecto da população a partir do estudo de uma
+amostra" de **inferência estatística**.
 
 
+---
+<div style="text-align: justify">
 
+## AMOSTRA E POPULAÇÃO
 
+Ilustração de um processo de amostragem:
 
+```{r, echo = F, fig.align = 'center', out.width = '50%'}
+knitr::include_graphics('amostra.png')
+```
 
+--
 
+**OBS:** Mais a frente discutiremos com maior profundidade os processos de 
+amostragem ("como formar amostras a partir da população") de modo a aumentar as 
+chances de que a amostra selecionada seja representativa da população.
 
+---
+<div style="text-align: justify">
 
+## AMOSTRA E POPULAÇÃO
 
+É importante ressaltar que quando estamos nos referindo à população, chamamos 
+seus indicadores de parâmetros e, quando estamos nos referindo à amostra, 
+chamamos seus indicadores de estatísticas. Vamos aos exemplos:
 
+- **"A média de idade no Brasil é de 75 anos"**. Neste caso estamos avaliando toda a
+**população** do Brasil, assim, a **média é um indicador sobre esta população** 
+e, portanto, esta média pode ser chamada de **parâmetro**;
 
+- **"A média de idade da amostra é de 73 anos"**. Neste caso estamos
+avaliando uma **amostra da população** do Brasil, assim, a **média é um indicador
+sobre esta amostra** e, portanto, esta média pode ser chamada de **estatística**.
 
+<br/>
 
+Infelizmente, na maior parte dos casos não sabemos quais são os parâmetros, ou 
+seja, não sabemos exatamente os valores dos indicadores sobre a população. Mesmo 
+assim, mais a frente discutiremos uma série de estratégias para 
+obter conclusões consistentes a partir de amostras de dados selecionada, isto é, 
+aprenderemos como realizar inferências estatísticas.
+
+---
+class: inverse, center, middle 
+name: dependencia
+
+# TUDO SEMPRE DEPENDE?
+
+```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar o professor', out.width = '50%'}
+knitr::include_graphics('https://media.giphy.com/media/dEdmW17JnZhiU/giphy.gif')
+```
 
 
 
