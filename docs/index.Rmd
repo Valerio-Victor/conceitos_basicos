@@ -57,11 +57,19 @@ knitr::include_graphics('https://media.giphy.com/media/6R2mLi910HL4VXFwOG/giphy.
 
 --
 
-- [**O que é esse tal de R?**](#sobre_r)
+- [**Afinal, o que é uma amostra?**](#amostra_populacao)
 
 --
 
-- [**Vamos iniciar o nosso dicionário?**](#dicionario_r)
+- [**O Que é Probabilidade?**](#)
+
+--
+
+- [**Sua Hipótese é Verdadeira?**](#)
+
+--
+
+- [**Todo Erro é Igual?**](#)
 
 
 ---
@@ -71,7 +79,7 @@ name: objetivo_aula
 # QUAL O OBJETIVO DA AULA?
 
 ```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar o professor', out.width = '50%'}
-knitr::include_graphics('https://media.giphy.com/media/BpGWitbFZflfSUYuZ9/giphy.gif')
+knitr::include_graphics('https://media.giphy.com/media/UAHZijO91QCl2/giphy.gif')
 ```
 
 ---
@@ -79,23 +87,45 @@ knitr::include_graphics('https://media.giphy.com/media/BpGWitbFZflfSUYuZ9/giphy.
 
 ## OBJETIVO DA AULA
 
-Esta aula tem por objetivo principal **apresentar a principal ferramenta da 
-disciplina para aplicação dos conceitos a serem trabalhados a frente: a linguagem 
-de programação R**.
+Esta aula tem por objetivo principal **relembrar os principais conceitos 
+estatísticos** que serão aprofundados ao longo de todo o curso. Nosso foco aqui
+está em compreender a **"lógica de raciocínio de cada conceito" sem se apegar
+aos "recursos matemáticos" necessários para aplicação prática das lógicas 
+apresentadas**.
 
 <br/>
 
-De um lado, não é esperado que você tenha qualquer conhecimento prévio. Iniciaremos
-realmente "do zero", isto é, desde a fase de instalação. Por outro lado, é esperado 
-que ao final da aula toda a nossa estação de trabalho esteja pronta para uso e, 
-mais que isso, que não tenhamos medo de usá-la.
+O principal da aula é finalmente compreender que **estatística não "é conta"**, 
+muito mais que isso, **é uma forma de enxergar o mundo**. A estatística é uma 
+forma de tomar decisões consistentes, por sua vez, apoiadas em dados. Para tanto, 
+foram desenvolvidas uma série de **"ferramentas matemáticas"** para analisar os 
+dados.
 
 <br/>
 
-**OBS:** Como se sabe, o foco da disciplina não está na programação (ela não passa 
-de uma ferramenta) e, por isso, os conceitos relativos à programação serão apenas 
-complementares e não seremos rigorosos em suas definições. Queremos aprender a 
-aplicar e hoje daremos os primeiros passos!
+**OBS:** A partir da perspectiva acima deve-se sempre se ter em mente que a
+matemática não passa de uma ferramenta que aprenderemos a usar, mas não é o 
+objetivo final. Pelo menos não para nós que temos um foco aplicado!
+
+
+---
+<div style="text-align: justify">
+
+## OBJETIVO DA AULA
+
+Contudo, na segunda parte da aula de hoje continuaremos a discutir aspectos da 
+programação em R. Consolidaremos alguns conceitos de programação vistos na última
+aula e ainda avanceremos em mais alguns aspectos. 
+
+<br/>
+
+**OBS:** É importante ter em mente que o aprendizado em programação é facilitado 
+quando estamos constantemente em contato com a programação. Sobre este aspecto 
+uma dica pode te ajudar a se desenvolver: "é melhor estudar 10 minutos de 
+programação ao dia, 6 vezes por semana, que estudar apenas uma 1 hora de 
+programação em 1 dia da semana". Pratique/repita os conceitos de programação 
+vistos em aula, um pouquinho por dia, todo dia!
+
 
 ---
 <div style="text-align: justify">
@@ -103,18 +133,92 @@ aplicar e hoje daremos os primeiros passos!
 ## OBJETIVO DA AULA
 
 ```{r, echo = F, fig.align = 'center', out.width = '80%'}
-#knitr::include_graphics('foco_aula.png')
+knitr::include_graphics('foco_aula.png')
 ```
 
 ---
 class: inverse, center, middle 
-name: sobre_r
+name: amostra_populacao
 
-# O QUE É ESSE TAL DE R?
+# AFINAL, O QUE É UMA AMOSTRA?
 
 ```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar o professor', out.width = '50%'}
-knitr::include_graphics('https://media.giphy.com/media/AEkhbYZRKUaVoEDKph/giphy.gif')
+knitr::include_graphics('https://media.giphy.com/media/cAxOGVNVPEkjDcpVQk/giphy.gif')
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 <div style="text-align: justify">
