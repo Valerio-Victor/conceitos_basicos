@@ -1,0 +1,304 @@
+---
+title: 'CONCEITOS BÁSICOS DE ESTATÍSTICA </br> (AULA 03)'
+subtitle: 'Metodologia Quantitativa em Administração' 
+author: 
+  - 'Prof. Victor Valerio'
+date: '_Última Atualização_: `r format(Sys.Date(), "%d-%m-%Y")`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+
+xaringanthemer::style_mono_light(base_color = '#0A5632')
+                                   
+```
+
+```{r ,echo=FALSE}
+
+xaringanExtra::use_scribble()
+
+xaringanExtra::use_search(show_icon = TRUE)
+
+```
+
+class: inverse, center, middle
+
+# USE MÁSCARA!
+
+```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar a organização dos atendimentos ', out.width = '50%'}
+knitr::include_graphics('https://media.giphy.com/media/6R2mLi910HL4VXFwOG/giphy.gif')
+```
+
+---
+## APRESENTAÇÃO
+
+- [**Qual o Objetivo da Aula?**](#objetivo_aula)
+
+--
+
+- [**O que é esse tal de R?**](#sobre_r)
+
+--
+
+- [**Vamos iniciar o nosso dicionário?**](#dicionario_r)
+
+
+---
+class: inverse, center, middle 
+name: objetivo_aula
+
+# QUAL O OBJETIVO DA AULA?
+
+```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar o professor', out.width = '50%'}
+knitr::include_graphics('https://media.giphy.com/media/BpGWitbFZflfSUYuZ9/giphy.gif')
+```
+
+---
+<div style="text-align: justify">
+
+## OBJETIVO DA AULA
+
+Esta aula tem por objetivo principal **apresentar a principal ferramenta da 
+disciplina para aplicação dos conceitos a serem trabalhados a frente: a linguagem 
+de programação R**.
+
+<br/>
+
+De um lado, não é esperado que você tenha qualquer conhecimento prévio. Iniciaremos
+realmente "do zero", isto é, desde a fase de instalação. Por outro lado, é esperado 
+que ao final da aula toda a nossa estação de trabalho esteja pronta para uso e, 
+mais que isso, que não tenhamos medo de usá-la.
+
+<br/>
+
+**OBS:** Como se sabe, o foco da disciplina não está na programação (ela não passa 
+de uma ferramenta) e, por isso, os conceitos relativos à programação serão apenas 
+complementares e não seremos rigorosos em suas definições. Queremos aprender a 
+aplicar e hoje daremos os primeiros passos!
+
+---
+<div style="text-align: justify">
+
+## OBJETIVO DA AULA
+
+```{r, echo = F, fig.align = 'center', out.width = '80%'}
+#knitr::include_graphics('foco_aula.png')
+```
+
+---
+class: inverse, center, middle 
+name: sobre_r
+
+# O QUE É ESSE TAL DE R?
+
+```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar o professor', out.width = '50%'}
+knitr::include_graphics('https://media.giphy.com/media/AEkhbYZRKUaVoEDKph/giphy.gif')
+```
+
+---
+<div style="text-align: justify">
+
+## O TAL DO R
+
+O **R** é um software livre (*open source*) que foi criado na década de 1990 por 
+dois estatísticos da Universidade de Auckland (Nova Zelândia), **R**oss Ihaka e 
+**R**obert Gentleman (isso mesmo, o nome do software se refere as iniciais dos
+nomes de seus desenvolvedores).
+
+<br>
+
+Ele foi criado por dois estatísticos e para aplicações estatísticas (por isso a
+escolha do mesmo para esta disciplina). Atualmente, a Foudation for Statistical 
+Computing dá suporte ao software e ele ganhou uma ampla gama de aplicações e 
+funcionalidades se tornando um dos programas mais utilizados em todo o mundo!
+
+<br>
+
+Programar em R significa organizar um **algoritmo que seja interpretável pelo 
+software** (na programação, dizemos: **desenvolver um algoritmo a ser compilado 
+pelo software R**). Neste sentido, é interessante desenvolver um pouco melhor este
+conceito.
+
+---
+## AFINAL, O QUE SIGNIFICA PROGRAMAR EM R?
+
+.pull-left[
+**DEFINIÇÃO DE ALGORITMO:**
+- **Matemática**: Sequência finita de regras, raciocínios ou operações que, 
+aplicada a um número finito de dados, permite solucionar classes semelhantes de problemas.
+
+- **Informática**: Conjunto das regras e procedimentos lógicos perfeitamente 
+definidos que levam à solução de um problema em um número finito de etapas.
+]
+
+.pull-right[
+**COMPILAR EM R:**
+- Tradução (ou interpretação) de um determinado código escrito (algoritmo) em 
+linguagem de máquina para a execução das tarefas definidas.
+]
+
+---
+<div style="text-align: justify">
+## PRECISAMOS SER ORGANIZADOS, SEMPRE!
+
+Como visto, um algoritmo é uma sequência de etapas escritas em um código e com 
+alguma finalidade específica. Mas essa singela definição pode deixar passar um 
+fato importante: **O código pode ser muito grande, com muitos "atributos"!**
+
+<br/>
+
+Assim, o seu desenvolvimento pode se tornar complexo em alguns casos e, mais que 
+isso, o seu entedimento no futuro (quando for retomado por você ou mesmo por outros pesquisadores) também pode ser complicado.
+
+<br/> 
+
+Para nos ajudar nessa tarefa de organizar os algoritmos desenvolvidos, ou em 
+desenvolvimento, utilizamos um outro aplicativo denominado: **RStudio**. Vale 
+ressaltar, isso significa que **continuamos programando em linguagem R**, mas com a 
+ajuda de um organizador chamado **RStudio** (em programação, esse "organizador"
+é chamado de **IDE -  Integrated Development Enviroment**).
+
+---
+## A CARA DA CIÊNCIA DE DADOS!
+
+.pull-left[
+**R ("linguagem")**
+
+<br/>
+
+```{r, echo = F, fig.align = 'center', out.width = '100%'}
+#knitr::include_graphics('foto_r.png')
+```
+]
+
+.pull-right[
+**RStudio ("organizador")**
+
+<br/>
+
+```{r, echo = F, fig.align = 'center', out.width = '80%'}
+#knitr::include_graphics('foto_rstudio.jpg')
+```
+]
+
+
+---
+class: inverse, center, middle 
+name: dicionario_r
+
+# VAMOS INICIAR O NOSSO DICIONÁRIO?
+
+```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar o professor', out.width = '50%'}
+knitr::include_graphics('https://media.giphy.com/media/9psHrHyIXciY6lCz8B/giphy.gif')
+```
+
+---
+<div style="text-align: justify">
+
+## CONCEITOS INICIAIS
+
+- **OPERAÇÃO:** Similar ao conceito da matemática (soma "+", subtração "-", 
+multiplicação "*", divisão "/", potenciação "**" e etc.).
+
+<br/>
+
+- **OBJETO:** Qualquer coisa (número, conjunto de números, imagens, etc.) que 
+pode ser associada (armazenada) em uma variável. Para criar um objeto no R (ou 
+associar determinada informação à um objeto) utiliza-se o sinal de atribuição 
+"<-" (como se fosse uma seta que mostra o que está sendo atribuído ao objeto).
+
+<br/>
+
+- **FUNÇÃO:** Ação (ou conjunto de ações) pré-definidas a serem implementadas de 
+modo a gerar um *output* a partir de algum *input* a ser fornecido. Os inputs
+fornecidos para uma função são chamados de **Argumentos**.
+
+<br/>
+
+- **PACOTES:** Bibliotecas contendo funções com finalidades específicas (em 
+alguns casos, contendo dados de exemplo também).
+
+
+---
+## ENTENDENDO A EXISTÊNCIA DE PACOTES
+
+.pull-left[
+**Pacote 1 (Finalidade: furar parede)**
+
+<br/>
+
+```{r, echo = F, fig.align = 'center', out.width = '100%'}
+#knitr::include_graphics('foto_furadeira.jpg')
+```
+]
+
+.pull-right[
+**Pacote 2 ("Finalidade: Apertar porcas")**
+
+<br/>
+
+```{r, echo = F, fig.align = 'center', out.width = '100%'}
+#knitr::include_graphics('foto_chaverosca.jpg')
+```
+]
+
+---
+## COMO INSTALAR E USAR PACOTES?
+
+.pull-left[
+
+**NO CONSOLE**
+
+**install.packages("nome_do_pacote")**
+
+<br/>
+
+```{r, echo = F, fig.align = 'center', out.width = '100%'}
+#knitr::include_graphics('foto_instalando.jpg')
+```
+]
+
+.pull-right[
+
+**NO SCRIPT**
+
+**nome_do_pacote::nome_da_função**
+
+<br/>
+
+```{r, echo = F, fig.align = 'center', out.width = '100%'}
+#knitr::include_graphics('foto_ascendendo.jpg')
+```
+]
+
+---
+class: inverse, center, middle
+
+
+```{r, echo = F, fig.align = 'center', fig.alt= 'Gif para agradecer pela atenção e o tema é da série the office', out.width = '80%'}
+
+knitr::include_graphics('https://media.giphy.com/media/n4oKYFlAcv2AU/giphy.gif')
+
+```
+

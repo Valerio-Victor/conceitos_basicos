@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>CONCEITOS BÁSICOS DE ESTATÍSTICA  (AULA 03)</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Prof. Victor Valerio" />
+    <script src="index_files/header-attrs/header-attrs.js"></script>
+    <script src="index_files/fabric/fabric.min.js"></script>
+    <link href="index_files/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="index_files/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
+    <script src="index_files/mark.js/mark.min.js"></script>
+    <link href="index_files/xaringanExtra-search/search.css" rel="stylesheet" />
+    <script src="index_files/xaringanExtra-search/search.js"></script>
+    <script>window.addEventListener('load', function() { window.xeSearch = new RemarkSearch({"position":"bottom-left","caseSensitive":false,"showIcon":true,"autoSearch":true}) })</script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# CONCEITOS BÁSICOS DE ESTATÍSTICA </br> (AULA 03)
+## Metodologia Quantitativa em Administração
+### Prof. Victor Valerio
+### <em>Última Atualização</em>: 03-04-2022
+
+---
+
+
+
+
+
+
+
+
+class: inverse, center, middle
+
+# USE MÁSCARA!
+
+&lt;img src="https://media.giphy.com/media/6R2mLi910HL4VXFwOG/giphy.gif" title="Gif da série the office para apresentar a organização dos atendimentos " alt="Gif da série the office para apresentar a organização dos atendimentos " width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+## APRESENTAÇÃO
+
+- [**Qual o Objetivo da Aula?**](#objetivo_aula)
+
+--
+
+- [**O que é esse tal de R?**](#sobre_r)
+
+--
+
+- [**Vamos iniciar o nosso dicionário?**](#dicionario_r)
+
+
+---
+class: inverse, center, middle 
+name: objetivo_aula
+
+# QUAL O OBJETIVO DA AULA?
+
+&lt;img src="https://media.giphy.com/media/BpGWitbFZflfSUYuZ9/giphy.gif" title="Gif da série the office para apresentar o professor" alt="Gif da série the office para apresentar o professor" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+&lt;div style="text-align: justify"&gt;
+
+## OBJETIVO DA AULA
+
+Esta aula tem por objetivo principal **apresentar a principal ferramenta da 
+disciplina para aplicação dos conceitos a serem trabalhados a frente: a linguagem 
+de programação R**.
+
+&lt;br/&gt;
+
+De um lado, não é esperado que você tenha qualquer conhecimento prévio. Iniciaremos
+realmente "do zero", isto é, desde a fase de instalação. Por outro lado, é esperado 
+que ao final da aula toda a nossa estação de trabalho esteja pronta para uso e, 
+mais que isso, que não tenhamos medo de usá-la.
+
+&lt;br/&gt;
+
+**OBS:** Como se sabe, o foco da disciplina não está na programação (ela não passa 
+de uma ferramenta) e, por isso, os conceitos relativos à programação serão apenas 
+complementares e não seremos rigorosos em suas definições. Queremos aprender a 
+aplicar e hoje daremos os primeiros passos!
+
+---
+&lt;div style="text-align: justify"&gt;
+
+## OBJETIVO DA AULA
+
+
+
+---
+class: inverse, center, middle 
+name: sobre_r
+
+# O QUE É ESSE TAL DE R?
+
+&lt;img src="https://media.giphy.com/media/AEkhbYZRKUaVoEDKph/giphy.gif" title="Gif da série the office para apresentar o professor" alt="Gif da série the office para apresentar o professor" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+&lt;div style="text-align: justify"&gt;
+
+## O TAL DO R
+
+O **R** é um software livre (*open source*) que foi criado na década de 1990 por 
+dois estatísticos da Universidade de Auckland (Nova Zelândia), **R**oss Ihaka e 
+**R**obert Gentleman (isso mesmo, o nome do software se refere as iniciais dos
+nomes de seus desenvolvedores).
+
+&lt;br&gt;
+
+Ele foi criado por dois estatísticos e para aplicações estatísticas (por isso a
+escolha do mesmo para esta disciplina). Atualmente, a Foudation for Statistical 
+Computing dá suporte ao software e ele ganhou uma ampla gama de aplicações e 
+funcionalidades se tornando um dos programas mais utilizados em todo o mundo!
+
+&lt;br&gt;
+
+Programar em R significa organizar um **algoritmo que seja interpretável pelo 
+software** (na programação, dizemos: **desenvolver um algoritmo a ser compilado 
+pelo software R**). Neste sentido, é interessante desenvolver um pouco melhor este
+conceito.
+
+---
+## AFINAL, O QUE SIGNIFICA PROGRAMAR EM R?
+
+.pull-left[
+**DEFINIÇÃO DE ALGORITMO:**
+- **Matemática**: Sequência finita de regras, raciocínios ou operações que, 
+aplicada a um número finito de dados, permite solucionar classes semelhantes de problemas.
+
+- **Informática**: Conjunto das regras e procedimentos lógicos perfeitamente 
+definidos que levam à solução de um problema em um número finito de etapas.
+]
+
+.pull-right[
+**COMPILAR EM R:**
+- Tradução (ou interpretação) de um determinado código escrito (algoritmo) em 
+linguagem de máquina para a execução das tarefas definidas.
+]
+
+---
+&lt;div style="text-align: justify"&gt;
+## PRECISAMOS SER ORGANIZADOS, SEMPRE!
+
+Como visto, um algoritmo é uma sequência de etapas escritas em um código e com 
+alguma finalidade específica. Mas essa singela definição pode deixar passar um 
+fato importante: **O código pode ser muito grande, com muitos "atributos"!**
+
+&lt;br/&gt;
+
+Assim, o seu desenvolvimento pode se tornar complexo em alguns casos e, mais que 
+isso, o seu entedimento no futuro (quando for retomado por você ou mesmo por outros pesquisadores) também pode ser complicado.
+
+&lt;br/&gt; 
+
+Para nos ajudar nessa tarefa de organizar os algoritmos desenvolvidos, ou em 
+desenvolvimento, utilizamos um outro aplicativo denominado: **RStudio**. Vale 
+ressaltar, isso significa que **continuamos programando em linguagem R**, mas com a 
+ajuda de um organizador chamado **RStudio** (em programação, esse "organizador"
+é chamado de **IDE -  Integrated Development Enviroment**).
+
+---
+## A CARA DA CIÊNCIA DE DADOS!
+
+.pull-left[
+**R ("linguagem")**
+
+&lt;br/&gt;
+
+
+]
+
+.pull-right[
+**RStudio ("organizador")**
+
+&lt;br/&gt;
+
+
+]
+
+
+---
+class: inverse, center, middle 
+name: dicionario_r
+
+# VAMOS INICIAR O NOSSO DICIONÁRIO?
+
+&lt;img src="https://media.giphy.com/media/9psHrHyIXciY6lCz8B/giphy.gif" title="Gif da série the office para apresentar o professor" alt="Gif da série the office para apresentar o professor" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+&lt;div style="text-align: justify"&gt;
+
+## CONCEITOS INICIAIS
+
+- **OPERAÇÃO:** Similar ao conceito da matemática (soma "+", subtração "-", 
+multiplicação "*", divisão "/", potenciação "**" e etc.).
+
+&lt;br/&gt;
+
+- **OBJETO:** Qualquer coisa (número, conjunto de números, imagens, etc.) que 
+pode ser associada (armazenada) em uma variável. Para criar um objeto no R (ou 
+associar determinada informação à um objeto) utiliza-se o sinal de atribuição 
+"&lt;-" (como se fosse uma seta que mostra o que está sendo atribuído ao objeto).
+
+&lt;br/&gt;
+
+- **FUNÇÃO:** Ação (ou conjunto de ações) pré-definidas a serem implementadas de 
+modo a gerar um *output* a partir de algum *input* a ser fornecido. Os inputs
+fornecidos para uma função são chamados de **Argumentos**.
+
+&lt;br/&gt;
+
+- **PACOTES:** Bibliotecas contendo funções com finalidades específicas (em 
+alguns casos, contendo dados de exemplo também).
+
+
+---
+## ENTENDENDO A EXISTÊNCIA DE PACOTES
+
+.pull-left[
+**Pacote 1 (Finalidade: furar parede)**
+
+&lt;br/&gt;
+
+
+]
+
+.pull-right[
+**Pacote 2 ("Finalidade: Apertar porcas")**
+
+&lt;br/&gt;
+
+
+]
+
+---
+## COMO INSTALAR E USAR PACOTES?
+
+.pull-left[
+
+**NO CONSOLE**
+
+**install.packages("nome_do_pacote")**
+
+&lt;br/&gt;
+
+
+]
+
+.pull-right[
+
+**NO SCRIPT**
+
+**nome_do_pacote::nome_da_função**
+
+&lt;br/&gt;
+
+
+]
+
+---
+class: inverse, center, middle
+
+
+&lt;img src="https://media.giphy.com/media/n4oKYFlAcv2AU/giphy.gif" title="Gif para agradecer pela atenção e o tema é da série the office" alt="Gif para agradecer pela atenção e o tema é da série the office" width="80%" style="display: block; margin: auto;" /&gt;
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
