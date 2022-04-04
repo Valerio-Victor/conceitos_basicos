@@ -65,15 +65,15 @@ knitr::include_graphics('https://media.giphy.com/media/6R2mLi910HL4VXFwOG/giphy.
 
 --
 
-- [**O que é probabilidade?**](#)
+- [**O que é probabilidade?**](#probabilidade)
 
 --
 
-- [**Sua hipótese é verdadeira?**](#)
+- [**Sua hipótese é verdadeira?**](#teste_hipotese)
 
 --
 
-- [**Todo erro é igual?**](#)
+- [**Todo erro é igual?**](#erros)
 
 
 ---
@@ -286,16 +286,92 @@ knitr::include_graphics('teste_curso.png')
 ```
 
 --
-
 - **Variável Independente:** O tipo de treinamento é manipulado pelo pesquisador;
 
 - **Variável Dependente:** As notas dos estudantes são medidas pelo pesquisador 
 após manipulação da variável independente.
 
+---
+class: inverse, center, middle 
+name: probabilidade
+
+# O QUE É PROBABILIDADE?
+
+```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar o professor', out.width = '50%'}
+knitr::include_graphics('https://media.giphy.com/media/o75ajIFH0QnQC3nCeD/giphy.gif')
+```
 
 
 
+---
+class: inverse, center, middle 
+name: probabilidade
 
+# SUA HIPÓTESE É VERDADEIRA?
+
+```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar o professor', out.width = '50%'}
+knitr::include_graphics('https://media.giphy.com/media/GfaZNzU42Snz6dlGhN/giphy.gif')
+```
+
+
+---
+<div style="text-align: justify">
+
+## RETOMANDO OS CONCEITOS
+
+Para todas as conclusões que os estatísticos alcançam a partir das estratégias 
+analíticas há um grau de confiança. Esse nível de confiança é expresso em termos
+de probabilidade. 
+
+<br/> 
+
+Vamos retomar os conceitos já vistos. Vimos que em uma pesquisa eleitoral avaliamos
+as intenções de votos a partir de uma **amostra** e, com base nos resultados da 
+amostra, **inferimos** (concluimos) o resultado das eleições (resultado da 
+**população**). O que estamos adicionando agora é que sabe-se que a amostra 
+analisada pode não ser totalmente representativa da população e, portanto, há a 
+necessidade de avaliar o **grau de confiança** do resultado obtido.
+
+<br/>
+
+Também devido a este fato deve-se ter em mente o conceito de probabilidade. De 
+fato, a probabilidade não é apenas um conceito estatístico, ao contrário, há um 
+extenso debate filosófico acerca do tema mas, mantendo nossa pretensão prática, 
+sejamos sucintos.
+
+
+---
+<div style="text-align: justify">
+
+## CONCEITO DE PROBABILIDADE
+
+Sob uma perspectiva matemática, a **probabilidade** de um evento ocorrer é 
+calculada a partir de uma razão entre o **número de vezes que um evento pode 
+ocorrer** e o **número total de eventos possíveis**. Para facilitar a explicação 
+deste conceito vamos buscar alguns exemplos amplamente utilizados nestes momentos:
+
+- Ao lançar uma moeda não viciada, qual a probabilidade de cair cara?
+  - **Número de vezes que o evento pode ocorrer** =  número de vezes que pode cair 
+  cara (como a moeda tem um lado cara e um coroa, o número de vezes que pode cair 
+  cara corresponde a um);
+  
+  - **Número total de eventos possíveis** = número de lados da moeda (o total de 
+  eventos possíveis é igual a dois, cair cara, ou cair coroa);
+  
+  - Assim, a probabilidade de cair cara ao lançar uma moeda é igual a $1/2$ (
+  ou 50%).
+
+--
+
+$$Probabilidade = \frac{Número \ de \ vezes \ que \ o \ evento\  pode \ ocorrer}{Número \ total \ de \ eventos \ possíveis} $$
+---
+class: inverse, center, middle 
+name: erros
+
+# TODO ERRO É IGUAL?
+```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar o professor', out.width = '50%'}
+knitr::include_graphics('https://media.giphy.com/media/SZQBPO4NqHkh6wmdXk/giphy.gif')
+```
 
 
 
