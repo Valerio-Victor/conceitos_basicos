@@ -256,20 +256,41 @@ name: dependencia
 knitr::include_graphics('https://media.giphy.com/media/dEdmW17JnZhiU/giphy.gif')
 ```
 
+---
+<div style="text-align: justify">
 
+## Variáveis Dependentes e Variáveis Independentes
 
+Em alguns casos os estatísticos precisam monitorar algo que pode assumir
+diferentes valores em determinadas circustâncias e, nesses casos, chamamos esse 
+algo de **variável**. Estas variáveis podem ser agrupadas em dois tipos, conforme
+apresentado abaixo:
 
+- **Variável independente:** Variável que o pesquisador manipula durante a sua 
+pesquisa;
 
+- **Variável dependente:** Variável que o pesquisador mede ao ser alterada pela
+manipulação da variável independente.
 
+<br/>
 
+É possível encontrar as duas variáveis em análises estatísticas e, em geral, os
+pesquisadores estão interessantos em avaliar a relação entre as variáveis dependentes
+e as variáveis independentes.
 
+---
+## Variáveis Dependentes e Independentes - Exemplo
 
+```{r, echo = F, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics('teste_curso.png')
+```
 
+--
 
+- **Variável Independente:** O tipo de treinamento é manipulado pelo pesquisador;
 
-
-
-
+- **Variável Dependente:** As notas dos estudantes são medidas pelo pesquisador 
+após manipulação da variável independente.
 
 
 
