@@ -230,11 +230,11 @@ chances de que a amostra selecionada seja representativa da população.
 seus indicadores de parâmetros e, quando estamos nos referindo à amostra, 
 chamamos seus indicadores de estatísticas. Vamos aos exemplos:
 
-- **"A média de idade no Brasil é de 75 anos"**. Neste caso estamos avaliando toda a
+- **"A média de vida no Brasil é de 75 anos"**. Neste caso estamos avaliando toda a
 **população** do Brasil, assim, a **média é um indicador sobre esta população** 
 e, portanto, esta média pode ser chamada de **parâmetro**;
 
-- **"A média de idade da amostra é de 73 anos"**. Neste caso estamos
+- **"A média de vida da amostra é de 73 anos"**. Neste caso estamos
 avaliando uma **amostra da população** do Brasil, assim, a **média é um indicador
 sobre esta amostra** e, portanto, esta média pode ser chamada de **estatística**.
 
