@@ -298,7 +298,7 @@ name: probabilidade
 # O QUE É PROBABILIDADE?
 
 ```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar o professor', out.width = '50%'}
-knitr::include_graphics('https://media.giphy.com/media/o75ajIFH0QnQC3nCeD/giphy.gif')
+knitr::include_graphics('https://media.giphy.com/media/T1WqKkLY753dZghbu6/giphy.gif')
 ```
 
 ---
@@ -353,7 +353,7 @@ deste conceito vamos buscar alguns exemplos amplamente utilizados nestes momento
 $$Probabilidade = \frac{Número \ de \ vezes \ que \ o \ evento\  pode \ ocorrer}{Número \ total \ de \ eventos \ possíveis} $$
 ---
 class: inverse, center, middle 
-name: probabilidade
+name: teste_hipotese
 
 # SUA HIPÓTESE É VERDADEIRA?
 
@@ -462,38 +462,9 @@ erros são diferentes:
 
 - **Erro do Tipo II**: Ocorre quando não se rejeita $H_0$ mas, se deveria.
 
+<br/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Qual erro seria pior?!
 
 ---
 class: inverse, center, middle
