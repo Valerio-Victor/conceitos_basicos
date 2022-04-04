@@ -301,19 +301,6 @@ name: probabilidade
 knitr::include_graphics('https://media.giphy.com/media/o75ajIFH0QnQC3nCeD/giphy.gif')
 ```
 
-
-
----
-class: inverse, center, middle 
-name: probabilidade
-
-# SUA HIPÓTESE É VERDADEIRA?
-
-```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar o professor', out.width = '50%'}
-knitr::include_graphics('https://media.giphy.com/media/GfaZNzU42Snz6dlGhN/giphy.gif')
-```
-
-
 ---
 <div style="text-align: justify">
 
@@ -366,6 +353,87 @@ deste conceito vamos buscar alguns exemplos amplamente utilizados nestes momento
 $$Probabilidade = \frac{Número \ de \ vezes \ que \ o \ evento\  pode \ ocorrer}{Número \ total \ de \ eventos \ possíveis} $$
 ---
 class: inverse, center, middle 
+name: probabilidade
+
+# SUA HIPÓTESE É VERDADEIRA?
+
+```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar o professor', out.width = '50%'}
+knitr::include_graphics('https://media.giphy.com/media/GfaZNzU42Snz6dlGhN/giphy.gif')
+```
+
+
+
+---
+<div style="text-align: justify">
+
+## Hipótese, Teste de Hipótese e Probabilidade
+
+Sempre que um estatístico busca estudar algo (por exemplo, o impacto do 
+"treinamento A" no desempenho escolar dos estudantes) ele o faz a partir de hipóteses. 
+Isto é, ele faz uma afirmação sobre o caso estudado e, ao reunir os dados sobre o tema,
+ele testa se a afirmação está correta.
+
+- "afirmação sobre o caso estudado" (**hipótese**);
+
+- "testa se a afirmação está correta" (**teste de hipótese**).
+
+<br/>
+
+
+Como dito anteriormente, a toda conclusão estatística está associada uma hipótese
+e, assim, o próprio teste de hipótese é uma aplicação do conceito de probabilidade. 
+Vamos entender este conceito a partir de um exemplo concreto (o mais simples de 
+todos, o lançar de uma moeda).
+
+---
+<div style="text-align: justify">
+
+## Hipótese, Teste de Hipótese e Probabilidade
+
+Suponha que você possui uma moeda e queira avaliar se ela é viciada ou não. 
+
+- **Tema estudado:** A fabricação da moeda (viciada ou não?);
+
+- **Formulação da explicação (formulação da hipótese):** "A moeda não é viciada!";
+
+- **Teste:** Lançar 100 vezes uma moeda e anotar o resultado do lançamento (cara ou coroa);
+
+- **Probabilidade esperada:** Como sabemos, é esperado que metade das vezes o resultado
+do lançamento seja cara e a outra metade das vezes seja coroa (devido às probabilidades
+de ocorrência do evento cara, 50%, e coroa, 50%).
+
+Suponha agora que ao realizar o teste (lançamento da moeda 100 vezes), você tenha 
+obtido 99 caras e apenas 1 coroa. Qual seria a sua conclusão? Provavelmente, você
+entenderá que a moeda é viciada. Mas qual foi o seu raciocínio para chegar a esta 
+conclusão? Provavelmente foi: a probabilidade de ocorrência desses resultados é muito 
+baixa ao se comparar com os resultados esperados. 
+
+
+---
+<div style="text-align: justify">
+
+## TESTE DE HIPÓTESE
+
+No exemplo anterior foi criada uma hipótese sobre a moeda, "ela não é viciada".
+Em estatística isso é chamado de **hipótese nula** (em geral, denota-se $H_0$), 
+isto é, uma hipótese inicial que supõe que não há nada fora do comum. Por seu turno,
+associado a cada hipótese nula há uma **hipótese alternativa** (em geral, 
+denota-se $H_1$), como contraponto à hipótese nula. 
+
+<br/>
+
+Pronto, a partir do exemplo anterior e destas definições de hipótese nula e 
+hipótese alternativa você já aprendeu a lógica do raciocínio. Um teste de hipótese
+consiste em perguntar **qual a probabilidade de se obter os resultados do teste 
+dado que a hipótese nula é verdadeira**. Caso essa probabilidade seja muito baixa, 
+você deve rejeitar a hipótese nula.  
+
+<br/>
+
+**Treine a formulação de hipóteses no exemplo dos treinamentos.**
+
+---
+class: inverse, center, middle 
 name: erros
 
 # TODO ERRO É IGUAL?
@@ -374,219 +442,58 @@ knitr::include_graphics('https://media.giphy.com/media/SZQBPO4NqHkh6wmdXk/giphy.
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 <div style="text-align: justify">
 
-## O TAL DO R
+##TPOS DE ERRO
 
-O **R** é um software livre (*open source*) que foi criado na década de 1990 por 
-dois estatísticos da Universidade de Auckland (Nova Zelândia), **R**oss Ihaka e 
-**R**obert Gentleman (isso mesmo, o nome do software se refere as iniciais dos
-nomes de seus desenvolvedores).
-
-<br>
-
-Ele foi criado por dois estatísticos e para aplicações estatísticas (por isso a
-escolha do mesmo para esta disciplina). Atualmente, a Foudation for Statistical 
-Computing dá suporte ao software e ele ganhou uma ampla gama de aplicações e 
-funcionalidades se tornando um dos programas mais utilizados em todo o mundo!
-
-<br>
-
-Programar em R significa organizar um **algoritmo que seja interpretável pelo 
-software** (na programação, dizemos: **desenvolver um algoritmo a ser compilado 
-pelo software R**). Neste sentido, é interessante desenvolver um pouco melhor este
-conceito.
-
----
-## AFINAL, O QUE SIGNIFICA PROGRAMAR EM R?
-
-.pull-left[
-**DEFINIÇÃO DE ALGORITMO:**
-- **Matemática**: Sequência finita de regras, raciocínios ou operações que, 
-aplicada a um número finito de dados, permite solucionar classes semelhantes de problemas.
-
-- **Informática**: Conjunto das regras e procedimentos lógicos perfeitamente 
-definidos que levam à solução de um problema em um número finito de etapas.
-]
-
-.pull-right[
-**COMPILAR EM R:**
-- Tradução (ou interpretação) de um determinado código escrito (algoritmo) em 
-linguagem de máquina para a execução das tarefas definidas.
-]
-
----
-<div style="text-align: justify">
-## PRECISAMOS SER ORGANIZADOS, SEMPRE!
-
-Como visto, um algoritmo é uma sequência de etapas escritas em um código e com 
-alguma finalidade específica. Mas essa singela definição pode deixar passar um 
-fato importante: **O código pode ser muito grande, com muitos "atributos"!**
+Nada garante que a sua conclusão ao realizar um teste esteja certa. Mesmo que 
+improvável, sempre há a possibilidade de ocorrência de um determinado evento e,
+devido a isto, você pode acabar incorrendo em erros. No exemplo dos 100 
+lançamentos da moeda, é possível que o resultado seja 99 caras e apenas 1 coroa 
+e, ainda assim, a moeda não seja viciada.
 
 <br/>
 
-Assim, o seu desenvolvimento pode se tornar complexo em alguns casos e, mais que 
-isso, o seu entedimento no futuro (quando for retomado por você ou mesmo por outros pesquisadores) também pode ser complicado.
+Assim, sempre é possível que uma determinada conclusão esteja errada. Mas os 
+erros são diferentes:
 
-<br/> 
+- **Erro do Tipo I**: Ocorre quando se rejeita $H_0$ e não se deveria.
 
-Para nos ajudar nessa tarefa de organizar os algoritmos desenvolvidos, ou em 
-desenvolvimento, utilizamos um outro aplicativo denominado: **RStudio**. Vale 
-ressaltar, isso significa que **continuamos programando em linguagem R**, mas com a 
-ajuda de um organizador chamado **RStudio** (em programação, esse "organizador"
-é chamado de **IDE -  Integrated Development Enviroment**).
-
----
-## A CARA DA CIÊNCIA DE DADOS!
-
-.pull-left[
-**R ("linguagem")**
-
-<br/>
-
-```{r, echo = F, fig.align = 'center', out.width = '100%'}
-#knitr::include_graphics('foto_r.png')
-```
-]
-
-.pull-right[
-**RStudio ("organizador")**
-
-<br/>
-
-```{r, echo = F, fig.align = 'center', out.width = '80%'}
-#knitr::include_graphics('foto_rstudio.jpg')
-```
-]
+- **Erro do Tipo II**: Ocorre quando não se rejeita $H_0$ mas, se deveria.
 
 
----
-class: inverse, center, middle 
-name: dicionario_r
-
-# VAMOS INICIAR O NOSSO DICIONÁRIO?
-
-```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar o professor', out.width = '50%'}
-knitr::include_graphics('https://media.giphy.com/media/9psHrHyIXciY6lCz8B/giphy.gif')
-```
-
----
-<div style="text-align: justify">
-
-## CONCEITOS INICIAIS
-
-- **OPERAÇÃO:** Similar ao conceito da matemática (soma "+", subtração "-", 
-multiplicação "*", divisão "/", potenciação "**" e etc.).
-
-<br/>
-
-- **OBJETO:** Qualquer coisa (número, conjunto de números, imagens, etc.) que 
-pode ser associada (armazenada) em uma variável. Para criar um objeto no R (ou 
-associar determinada informação à um objeto) utiliza-se o sinal de atribuição 
-"<-" (como se fosse uma seta que mostra o que está sendo atribuído ao objeto).
-
-<br/>
-
-- **FUNÇÃO:** Ação (ou conjunto de ações) pré-definidas a serem implementadas de 
-modo a gerar um *output* a partir de algum *input* a ser fornecido. Os inputs
-fornecidos para uma função são chamados de **Argumentos**.
-
-<br/>
-
-- **PACOTES:** Bibliotecas contendo funções com finalidades específicas (em 
-alguns casos, contendo dados de exemplo também).
 
 
----
-## ENTENDENDO A EXISTÊNCIA DE PACOTES
 
-.pull-left[
-**Pacote 1 (Finalidade: furar parede)**
 
-<br/>
 
-```{r, echo = F, fig.align = 'center', out.width = '100%'}
-#knitr::include_graphics('foto_furadeira.jpg')
-```
-]
 
-.pull-right[
-**Pacote 2 ("Finalidade: Apertar porcas")**
 
-<br/>
 
-```{r, echo = F, fig.align = 'center', out.width = '100%'}
-#knitr::include_graphics('foto_chaverosca.jpg')
-```
-]
 
----
-## COMO INSTALAR E USAR PACOTES?
 
-.pull-left[
 
-**NO CONSOLE**
 
-**install.packages("nome_do_pacote")**
 
-<br/>
 
-```{r, echo = F, fig.align = 'center', out.width = '100%'}
-#knitr::include_graphics('foto_instalando.jpg')
-```
-]
 
-.pull-right[
 
-**NO SCRIPT**
 
-**nome_do_pacote::nome_da_função**
 
-<br/>
 
-```{r, echo = F, fig.align = 'center', out.width = '100%'}
-#knitr::include_graphics('foto_ascendendo.jpg')
-```
-]
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 class: inverse, center, middle
