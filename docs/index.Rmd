@@ -6,7 +6,7 @@ author:
 date: '_Última Atualização_: `r format(Sys.Date(), "%d-%m-%Y")`'
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    css: ['default', 'meutema.css']
     nature:
       slideNumberFormat: "%current%"
       highlightStyle: github
@@ -42,38 +42,30 @@ xaringanExtra::use_search(show_icon = TRUE)
 
 ```
 
-class: inverse, center, middle
-
-# USE MÁSCARA!
-
-```{r, echo = F, fig.align = 'center', fig.alt= 'Gif da série the office para apresentar a organização dos atendimentos ', out.width = '50%'}
-knitr::include_graphics('https://media.giphy.com/media/6R2mLi910HL4VXFwOG/giphy.gif')
-```
-
 ---
 ## APRESENTAÇÃO
 
-- [**Qual o objetivo da aula?**](#objetivo_aula)
+- [**QUAL O OBJETIVO DA AULA?**](#objetivo_aula)
 
 --
 
-- [**Afinal, o que é uma amostra?**](#amostra_populacao)
+- [**AFINAL, O QUE É UMA AMOSTRA?**](#amostra_populacao)
 
 --
 
-- [**Tudo sempre depende?**](#dependencia)
+- [**TUDO SEMPRE DEPENDE?**](#dependencia)
 
 --
 
-- [**O que é probabilidade?**](#probabilidade)
+- [**O QUE É PROBABILIDADE?**](#probabilidade)
 
 --
 
-- [**Sua hipótese é verdadeira?**](#teste_hipotese)
+- [**SUA HIPÓTESE É VERDADEIRA?**](#teste_hipotese)
 
 --
 
-- [**Todo erro é igual?**](#erros)
+- [**TODO ERRO É IGUAL?**](#erros)
 
 
 ---
@@ -97,18 +89,22 @@ está em compreender a **"lógica de raciocínio de cada conceito" sem se apegar
 aos "recursos matemáticos" necessários para aplicação prática das lógicas 
 apresentadas**.
 
-<br/>
-
 O principal da aula é finalmente compreender que **estatística não "é conta"**, 
 muito mais que isso, **é uma forma de enxergar o mundo**. A estatística é uma 
 forma de tomar decisões consistentes, por sua vez, apoiadas em dados. Para tanto, 
 foram desenvolvidas uma série de **"ferramentas matemáticas"** para analisar os 
-dados. Aproveite este momento para refletir quantas vezes as suas decisões foram (ou 
+dados. 
+
+---
+<div style="text-align: justify">
+
+## OBJETIVO DA AULA
+
+Aproveite este momento para refletir quantas vezes as suas decisões foram (ou 
 ainda são) pautadas em expressões/raciocínios como "eu acho que...". Este é um 
 percurso muito perigoso pois em grande parte das vezes nossa intuição pode nos 
 levar ao erro!
 
-<br/>
 
 **OBS:** A partir da perspectiva acima deve-se sempre se ter em mente que a
 matemática não passa de uma ferramenta que aprenderemos a usar, mas não é o 
@@ -124,7 +120,6 @@ Contudo, na segunda parte da aula de hoje continuaremos a discutir aspectos da
 programação em R. Consolidaremos alguns conceitos de programação vistos na última
 aula e ainda avanceremos em mais alguns aspectos. 
 
-<br/>
 
 **OBS:** É importante ter em mente que o aprendizado em programação é facilitado 
 quando estamos constantemente em contato com a programação. Sobre este aspecto 
@@ -139,7 +134,7 @@ vistos em aula, um pouquinho por dia, todo dia!
 
 ## OBJETIVO DA AULA
 
-```{r, echo = F, fig.align = 'center', out.width = '80%'}
+```{r, echo = F, fig.align = 'center', out.width = '50%'}
 knitr::include_graphics('foco_aula.png')
 ```
 
@@ -158,26 +153,29 @@ knitr::include_graphics('https://media.giphy.com/media/cAxOGVNVPEkjDcpVQk/giphy.
 
 ## AMOSTRA E POPULAÇÃO
 
+</br>
 Sempre que vamos explicar os conceitos de amostra e população partimos de um 
-um exemplo útil: **Pesquisas de intenção de votos**, vamos a ele. Imagine que 
-você faz parte da equipe de uma empresa de pesquisa de opinião pública que foi 
-contratada para realizar uma previsão do resultado de uma eleição, como proceder?
+um exemplo útil: **Pesquisas de intenção de votos**, vamos a ele. 
 
-<br/>
+</br>
+Imagine que você faz parte da equipe de uma empresa de pesquisa de opinião 
+pública que foi contratada para realizar uma previsão do resultado de uma 
+eleição, como proceder?
+
+---
+<div style="text-align: justify">
+
+## AMOSTRA E POPULAÇÃO
 
 A única maneira de saber exatamente o resultado da eleição consiste em consultar
-todos os eleitores e, ainda mais, obrigá-los a falar a real intenção de cada um. 
+todos os eleitores e obrigá-los a falar a real intenção de cada um. 
 Não é necessário muito esforço para compreender que este procedimento é impossível:
  - Não há como consultar todos os eleitores;
  - Não há como obrigar ninguém a responder a real intenção de votos. 
 
-<br/>
-
-De todo modo, é possível contornar o primeiro problema, isto é, não é preciso 
-consultar todos os eleitores. Pode-se, alternativamente, selecionar um conjunto 
-de eleitores a serem consultados e, desde que este conjunto de eleitores seja 
-representativo do todo, concluir que o resultado a pesquisa com o conjunto 
-"é igual" ao resultado do todo.
+Em alguns casos é possível contornar o primeiro problema. Pode-se, por exemplo, 
+selecionar um subconjunto de eleitores a serem consultados e "extrapolar" a conclusão 
+obtida para o todo (desde que este subconjunto seja representativo).
 
 ---
 <div style="text-align: justify">
@@ -195,13 +193,18 @@ alguma questão ou experimento;
 - **Amostra:** Subconjunto de elementos (ou eventos) formados a partir da 
 população, ou seja, subconjunto do total de elementos (ou eventos).
 
-<br/>
+---
+<div style="text-align: justify">
+
+## AMOSTRA E POPULAÇÃO
 
 É possível realizar mais uma definição a partir do exemplo da pesquisa de 
 intenção de votos. Se você for um pouco mais observador poderá perceber que 
-utilizamos uma amostra para "obter" uma conclusão acerca da população. Aqui, vamos 
-chamar esta "conclusão sobre algum aspecto da população a partir do estudo de uma
-amostra" de **inferência estatística**.
+utilizamos uma amostra para "obter" uma conclusão acerca da população. 
+
+</br>
+Aqui, vamos chamar esta "conclusão sobre algum aspecto da população a partir do 
+estudo de uma amostra" de **inferência estatística**.
 
 
 ---
@@ -217,9 +220,8 @@ knitr::include_graphics('amostra.png')
 
 --
 
-**OBS:** Mais a frente discutiremos com maior profundidade os processos de 
-amostragem ("como formar amostras a partir da população") de modo a aumentar as 
-chances de que a amostra selecionada seja representativa da população.
+**OBS:** Mais a frente discutiremos técnicas de amostragem de modo a aumentar as 
+"chances" de que a amostra selecionada seja representativa do todo.
 
 ---
 <div style="text-align: justify">
@@ -238,11 +240,16 @@ e, portanto, esta média pode ser chamada de **parâmetro**;
 avaliando uma **amostra da população** do Brasil, assim, a **média é um indicador
 sobre esta amostra** e, portanto, esta média pode ser chamada de **estatística**.
 
-<br/>
+---
+<div style="text-align: justify">
+
+## AMOSTRA E POPULAÇÃO
 
 Infelizmente, na maior parte dos casos não sabemos quais são os parâmetros, ou 
-seja, não sabemos exatamente os valores dos indicadores sobre a população. Mesmo 
-assim, mais a frente discutiremos uma série de estratégias para 
+seja, não sabemos exatamente os valores dos indicadores sobre a população. 
+
+</br>
+Mesmo assim, mais a frente discutiremos uma série de estratégias para 
 obter conclusões consistentes a partir de amostras de dados selecionada, isto é, 
 aprenderemos como realizar inferências estatísticas.
 
@@ -272,21 +279,29 @@ pesquisa;
 - **Variável dependente:** Variável que o pesquisador mede ao ser alterada pela
 manipulação da variável independente.
 
-<br/>
+---
+<div style="text-align: justify">
+
+## Variáveis Dependentes e Variáveis Independentes
 
 É possível encontrar as duas variáveis em análises estatísticas e, em geral, os
 pesquisadores estão interessantos em avaliar a relação entre as variáveis dependentes
-e as variáveis independentes.
+e as variáveis independentes. Vamos a um exemplo:
 
----
-## Variáveis Dependentes e Independentes - Exemplo
 
 ```{r, echo = F, fig.align = 'center', out.width = '60%'}
 knitr::include_graphics('teste_curso.png')
 ```
 
---
-- **Variável Independente:** O tipo de treinamento é manipulado pelo pesquisador;
+---
+## Variáveis Dependentes e Variáveis Independentes
+
+</br>
+
+A partir do exemplo anterior é possível realizar as seguintes afirmações:
+
+- **Variável Independente:** O tipo de treinamento aplicado em sala é manipulado 
+pelo pesquisador;
 
 - **Variável Dependente:** As notas dos estudantes são medidas pelo pesquisador 
 após manipulação da variável independente.
@@ -310,21 +325,27 @@ Para todas as conclusões que os estatísticos alcançam a partir das estratégi
 analíticas há um grau de confiança. Esse nível de confiança é expresso em termos
 de probabilidade. 
 
-<br/> 
+Nós vimos que em uma pesquisa eleitoral avalia-se
+as intenções de votos a partir de uma **amostra** e, com base em seus resultados, **inferimos** (concluimos) o resultado das eleições (resultado da 
+**população**). 
 
-Vamos retomar os conceitos já vistos. Vimos que em uma pesquisa eleitoral avaliamos
-as intenções de votos a partir de uma **amostra** e, com base nos resultados da 
-amostra, **inferimos** (concluimos) o resultado das eleições (resultado da 
-**população**). O que estamos adicionando agora é que sabe-se que a amostra 
+O que estamos adicionando agora é que sabe-se que a amostra 
 analisada pode não ser totalmente representativa da população e, portanto, há a 
 necessidade de avaliar o **grau de confiança** do resultado obtido.
 
-<br/>
+---
+<div style="text-align: justify">
 
-Também devido a este fato deve-se ter em mente o conceito de probabilidade. De 
-fato, a probabilidade não é apenas um conceito estatístico, ao contrário, há um 
-extenso debate filosófico acerca do tema mas, mantendo nossa pretensão prática, 
-sejamos sucintos.
+## RETOMANDO OS CONCEITOS
+
+</br>
+Também devido a este fato deve-se ter em mente o conceito de probabilidade. Esta 
+definição não é simples, visto que, a probabilidade não é apenas um conceito 
+estatístico. 
+
+</br>
+Ao contrário do que se pensa, há um extenso debate filosófico acerca do tema. 
+Contudo, para mantermos nossa pretensão prática, sejamos sucintos.
 
 
 ---
@@ -334,23 +355,27 @@ sejamos sucintos.
 
 Sob uma perspectiva matemática, a **probabilidade** de um evento ocorrer é 
 calculada a partir de uma razão entre o **número de vezes que um evento pode 
-ocorrer** e o **número total de eventos possíveis**. Para facilitar a explicação 
-deste conceito vamos buscar alguns exemplos amplamente utilizados nestes momentos:
-
-- Ao lançar uma moeda não viciada, qual a probabilidade de cair cara?
-  - **Número de vezes que o evento pode ocorrer** =  número de vezes que pode cair 
-  cara (como a moeda tem um lado cara e um coroa, o número de vezes que pode cair 
-  cara corresponde a um);
-  
-  - **Número total de eventos possíveis** = número de lados da moeda (o total de 
-  eventos possíveis é igual a dois, cair cara, ou cair coroa);
-  
-  - Assim, a probabilidade de cair cara ao lançar uma moeda é igual a $1/2$ (
-  ou 50%).
-
---
+ocorrer** e o **número total de eventos possíveis**.
 
 $$Probabilidade = \frac{Número \ de \ vezes \ que \ o \ evento\  pode \ ocorrer}{Número \ total \ de \ eventos \ possíveis} $$
+---
+<div style="text-align: justify">
+
+## CONCEITO DE PROBABILIDADE
+
+Vamos buscar um exemplo recorrente. 
+_"Ao lançar uma moeda não viciada, qual a probabilidade de cair cara?"_
+
+  - **Número de vezes que o evento pode ocorrer** =  número de vezes que pode cair 
+  cara ("cair cara" corresponde a um dos dois lados de uma moeda);
+  
+  - **Número total de eventos possíveis** = número de lados da moeda (o total de 
+  eventos possíveis é igual a dois, cara ou coroa);
+  
+  - Assim, a probabilidade de cair cara ao lançar uma moeda é igual a $1/2$ (em 
+  porcentagem, 50%).
+
+
 ---
 class: inverse, center, middle 
 name: teste_hipotese
@@ -368,6 +393,7 @@ knitr::include_graphics('https://media.giphy.com/media/GfaZNzU42Snz6dlGhN/giphy.
 
 ## Hipótese, Teste de Hipótese e Probabilidade
 
+</br>
 Sempre que um estatístico busca estudar algo (por exemplo, o impacto do 
 "treinamento A" no desempenho escolar dos estudantes) ele o faz a partir de hipóteses. 
 Isto é, ele faz uma afirmação sobre o caso estudado e, ao reunir os dados sobre o tema,
@@ -377,11 +403,16 @@ ele testa se a afirmação está correta.
 
 - "testa se a afirmação está correta" (**teste de hipótese**).
 
-<br/>
+---
+<div style="text-align: justify">
 
+## Hipótese, Teste de Hipótese e Probabilidade
 
+</br>
 Como dito anteriormente, a toda conclusão estatística está associada uma hipótese
 e, assim, o próprio teste de hipótese é uma aplicação do conceito de probabilidade. 
+
+</br>
 Vamos entender este conceito a partir de um exemplo concreto (o mais simples de 
 todos, o lançar de uma moeda).
 
@@ -397,6 +428,11 @@ Suponha que você possui uma moeda e queira avaliar se ela é viciada ou não.
 - **Formulação da explicação (formulação da hipótese):** "A moeda não é viciada!";
 
 - **Teste:** Lançar 100 vezes uma moeda e anotar o resultado do lançamento (cara ou coroa);
+
+---
+<div style="text-align: justify">
+
+## Hipótese, Teste de Hipótese e Probabilidade
 
 - **Probabilidade esperada:** Como sabemos, é esperado que metade das vezes o resultado
 do lançamento seja cara e a outra metade das vezes seja coroa (devido às probabilidades
@@ -420,17 +456,13 @@ isto é, uma hipótese inicial que supõe que não há nada fora do comum. Por s
 associado a cada hipótese nula há uma **hipótese alternativa** (em geral, 
 denota-se $H_1$), como contraponto à hipótese nula. 
 
-<br/>
 
 Pronto, a partir do exemplo anterior e destas definições de hipótese nula e 
 hipótese alternativa você já aprendeu a lógica do raciocínio. Um teste de hipótese
-consiste em perguntar **qual a probabilidade de se obter os resultados do teste 
+consiste em perguntar **qual a probabilidade de se obter os resultados do teste, 
 dado que a hipótese nula é verdadeira**. Caso essa probabilidade seja muito baixa, 
 você deve rejeitar a hipótese nula.  
 
-<br/>
-
-**Treine a formulação de hipóteses no exemplo dos treinamentos.**
 
 ---
 class: inverse, center, middle 
@@ -448,23 +480,31 @@ knitr::include_graphics('https://media.giphy.com/media/SZQBPO4NqHkh6wmdXk/giphy.
 ##TPOS DE ERRO
 
 Nada garante que a sua conclusão ao realizar um teste esteja certa. Mesmo que 
-improvável, sempre há a possibilidade de ocorrência de um determinado evento e,
-devido a isto, você pode acabar incorrendo em erros. No exemplo dos 100 
-lançamentos da moeda, é possível que o resultado seja 99 caras e apenas 1 coroa 
-e, ainda assim, a moeda não seja viciada.
+improvável, sempre há a possibilidade de ocorrência de um determinado evento 
+inesperado. 
 
-<br/>
+</br>
+No exemplo dos 100 lançamentos da moeda, é possível que o resultado seja 99 caras 
+e apenas 1 coroa e, ainda assim, a moeda não seja viciada. Assim, sempre é 
+possível que uma determinada conclusão esteja errada. 
 
-Assim, sempre é possível que uma determinada conclusão esteja errada. Mas os 
-erros são diferentes:
+---
+<div style="text-align: justify">
+
+##TPOS DE ERRO
+Mas os erros são diferentes:
 
 - **Erro do Tipo I**: Ocorre quando se rejeita $H_0$ e não se deveria.
 
 - **Erro do Tipo II**: Ocorre quando não se rejeita $H_0$ mas, se deveria.
 
-<br/>
+--
 
-Qual erro seria pior?!
+**QUAL TIPO DE ERRO É PIOR?!**
+
+- Culpar o inocente;
+
+- Inocentar o culpado.
 
 ---
 class: inverse, center, middle
